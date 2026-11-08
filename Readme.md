@@ -1,117 +1,92 @@
-# Lab 2 – SQLite Database and CRUD Operations
+# Lab 3 – Books Management REST API
 
-## 1. Project Description
+## Project Overview
 
-This project demonstrates CRUD (Create, Read, Update, Delete) operations using SQLite database and Node.js with Express.js.
+The Books Management REST API is a backend application developed using **Node.js, Express.js, and SQLite**. It allows users to manage book records through RESTful API endpoints.
 
-The application provides REST API endpoints to manage book records stored in an SQLite database.
+The application supports creating, retrieving, updating, and deleting book records. It also provides search, sorting, pagination, and price filtering features.
 
-## 2. Technologies Used
+## Technologies Used
 
 - Node.js
 - Express.js
 - SQLite
 - JavaScript
 - Postman
-- VS Code
+- Git and GitHub
 
-## 3. Project Structure
+## Features
+
+- Retrieve all books.
+- Retrieve a specific book using its ID.
+- Add new books.
+- Update existing book details.
+- Delete books.
+- Search books by title.
+- Sort books by different columns.
+- Filter books using minimum and maximum prices.
+- Implement pagination using limit and offset.
+- Validate user inputs.
+- Handle errors with appropriate HTTP status codes.
+
+## Project Structure
 
 ```text
-lab-02/
+lab_3_rest_api/
 │
-├── database.db
-├── insertBooks.js
 ├── server.js
+├── server_backup.js
+├── database.db
 ├── package.json
 ├── package-lock.json
-├── README.md
-└── .gitignore
+│
+└── postman/
+    └── collections/
+        └── Lab 3 - Books Management REST API/
 ```
 
-## 4. Database Structure
+## Installation and Setup
 
-Table Name: `book`
+### 1. Clone the repository
 
-| Column | Data Type |
-|---|---|
-| id | INTEGER PRIMARY KEY AUTOINCREMENT |
-| title | TEXT |
-| author | TEXT |
-| price | INTEGER |
-| pages | INTEGER |
+```bash
+git clone https://github.com/kakumanicharitha34-png/lab_3_rest_api.git
+```
 
-## 5. CRUD Operations
+### 2. Navigate to the project folder
 
-### CREATE – POST
-Adds a new book to the database.
+```bash
+cd lab_3_rest_api
+```
 
-Endpoint:
-`POST /books/`
-
-### READ – GET
-Retrieves all books from the database.
-
-Endpoint:
-`GET /books/`
-
-Retrieves a particular book using its ID.
-
-Endpoint:
-`GET /books/:bookId/`
-
-### UPDATE – PUT
-Updates the details of an existing book.
-
-Endpoint:
-`PUT /books/:bookId/`
-
-### DELETE – DELETE
-Deletes a book from the database using its ID.
-
-Endpoint:
-`DELETE /books/:bookId/`
-
-## 6. Installation and Execution
-
-1. Clone or download the project.
-2. Open the project folder in VS Code.
-3. Install the dependencies:
+### 3. Install dependencies
 
 ```bash
 npm install
 ```
 
-4. Start the server:
+### 4. Start the server
+
+```bash
+npm run dev
+```
+
+Or:
 
 ```bash
 node server.js
 ```
 
-5. The server runs at:
+The server runs at:
 
-`http://localhost:3000/`
+```text
+http://localhost:3000/
+```
 
-6. Use Postman to test all CRUD operations.
+## API Endpoints
 
-## 7. API Testing
-
-The following operations were tested using Postman:
-
-- GET all books
-- GET a book by ID
-- POST a new book
-- PUT to update a book
-- DELETE a book
-
-## 8. Expected Results
-
-The application successfully performs CRUD operations on book records using SQLite.
-
-The API returns appropriate HTTP status codes and JSON responses.
-
-## 9. Conclusion
-
-This project helped me understand database connectivity, REST API development, SQL queries, and CRUD operations using Node.js, Express.js, and SQLite.
-
-**Project:** Lab 2 – SQLite Database and CRUD Routes
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/books/` | Get all books |
+| GET | `/books/:bookId/` | Get a book by ID |
+| POST
